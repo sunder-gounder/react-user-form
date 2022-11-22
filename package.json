@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "user-form",
   "version": "0.1.0",
   "private": true,
@@ -24,28 +25,19 @@
     "react-toastify": "^9.0.3",
     "web-vitals": "^2.1.4"
   },
+=======
+  "name": "serverapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+>>>>>>> b416a00df1e7327abd1ca13e4abe656e0dd95522
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "json-server": "^0.17.1"
   }
 }

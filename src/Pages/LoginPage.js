@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
+import { Grid,Paper, TextField, Button } from '@mui/material'
+
 
 const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate = useNavigate();
+  const paperStyle={padding :20,height:'70vh',width:280, margin:"20px auto"}
   
+  const btnstyle={margin:'8px 0'}
   
-  //getting email password in local storage 
-  const userName = localStorage.getItem("email")
-    ? localStorage.getItem("email")
-    : "admin@admin.com";
-  const userPassword = localStorage.getItem("password")
-    ? localStorage.getItem("password")
-    : "admin";
-
+ //admin value
+  const userName = "admin@admin.com";
+  const userPassword = "admin";
+  
   //submit function
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,44 +28,30 @@ const LoginPage = () => {
   };
   return (
     <>
-      <div className="form__container d-flex flex-column align-items-center justify-content-center">
-        <form>
-          <h4 >User Management System </h4>
-          <hr />
-          <div className="mb-3">
-            <label htmlFor="exampleInputEmail1" className="form-label">
-              Email address 
-            </label>
-            <input
-              type="email"
-              className="form-control"
-              value={email}
+      <Grid>
+     
+      <Paper elevation={10} style={paperStyle}>
+                <Grid align='center'>
+                   
+                    <h2>Sign In</h2>
+                </Grid>
+                <TextField label='Email' placeholder='Enter username'  
+                value={email}
               onChange={(e) => setEmail(e.target.value)}
-              id="exampleInputEmail1"
-              aria-describedby="emailHelp"
-            />
-          </div>
-          <div className="mb-3">
-            <label htmlFor="exampleInputPassword1" className="form-label">
-              Password
-            </label>
-            <input
-              type="password"
+              id="exampleInputEmail1"fullWidth required/>
+                
+                
+                <TextField label='Password' placeholder='Enter password' type='password'
+               
               className="form-control"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              id="exampleInputPassword1"
-            />
-          </div>
-          <div className="form__signupLink mb-3">
-           
-          
-          <button type="submit" className="form__button" onClick={handleSubmit}>
-            Login
-          </button>
-          </div>
-        </form>
-      </div>
+              id="exampleInputPassword1" fullWidth required/>
+                
+              <Button type='submit' color='primary' variant="contained" style={btnstyle} onClick={handleSubmit} fullWidth>Login</Button>
+               
+            </Paper>
+      </Grid>
     </>
   );
 };

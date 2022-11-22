@@ -1,36 +1,35 @@
 import React from "react";
 import { FaHouseUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import {Box, Grid, Item,DataGrid } from "@mui/material";
+
 const Header = () => {
   return (
-    <div  >
-      <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-        <div className="container">
-          <span className="navbar-brand">
-            {" "}
-            <FaHouseUser /> User Managment System{" "}
-          </span>
+   
+    <Box sx={{mx:'auto', width:200}}>
+<Grid container direction="column" alignItem="center" justifyContent={'center'} >
+  <Grid item xs={3}>
 
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-            <li className="nav-item">
+  
+  <FaHouseUser /> User Managment System{" "}
+
               <Link className="nav-link " to="/profile">
-                Add New
+                Add New {" "}
               </Link>
-            </li>
-            <li className="nav-item">
+              </Grid>
+            
               <Link className="nav-link " to="/users">
-                Users
+                Users {" "}
               </Link>
-            </li>
-            <li className="nav-item">
+
               <Link className="nav-link " to="/">
                 Logout{" "}
               </Link>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
+            
+  </Grid>
+
+</Box>
+
   );
 };
 
